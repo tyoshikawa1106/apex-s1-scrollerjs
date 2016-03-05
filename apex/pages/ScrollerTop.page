@@ -1,0 +1,39 @@
+<apex:page controller="ScrollerDemoController" showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" id="pg">
+    <apex:composition template="ScrollerTemplate">
+        <!-- title -->
+        <apex:define name="title">
+            <apex:outputText value="ScrollerJS - Top" />
+        </apex:define>
+        <!-- add head tag -->
+        <apex:define name="addHeadTag">
+            <style>
+                #wrapper {
+                    position: absolute;
+                    z-index: 1;
+                    top: 45px;
+                    bottom: 40px;
+                    left: 0;
+                    width: 100%;
+                    padding-top: 14px;
+                    background: #F0F1F2;
+                    overflow: hidden;
+                }
+            </style>
+        </apex:define>
+        <!-- body -->
+        <apex:define name="body">            
+            <div id="wrapper">
+                <div id="scroller" style="background-color: #f0f1f2">
+                    <ul>
+                        <li>
+                            <a href="{!$Page.ScrollerDefault}">ScrollerDefault</a>
+                        </li>
+                        <li>
+                            <a href="{!$Page.ScrollerFxEndless}">ScrollerFxEndless</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

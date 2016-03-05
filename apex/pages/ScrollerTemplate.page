@@ -1,0 +1,48 @@
+<apex:page showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" id="pg">
+    <html lang="ja">
+        <head>
+            <!-- Title -->
+            <title>
+                <apex:insert name="title" />
+            </title>
+            <!-- Meta -->
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+            <!-- SCROLLER BOOTSTRAP -->
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/bootstrap.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/bootstrap-debug.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/browser-support.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/browser-styles.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/helpers.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/raf.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/class-list.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/utils/cubic-bezier.js')}"></script>
+            <!-- SCROLLER CORE -->
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/scroller.js')}"></script>
+            <script src="{!URLFOR($Resource.ScrollerJs, 'src/surface-manager.js')}"></script>
+            <link href="{!URLFOR($Resource.ScrollerJs, 'src/scroller.css')}" rel="stylesheet" type="text/css" />
+            <!-- CUSTOM STYLES -->
+            <link href="{!URLFOR($Resource.ScrollerJs, 'src/assets/styles.css')}" rel="stylesheet" type="text/css" />
+            <!-- S1 CommonJs -->
+            <apex:include pageName="S1CommonJs" />
+            <!-- Common CSS -->
+            <apex:include pageName="ScrollerCommonCss" />
+            <!-- Add Head Tag -->
+            <apex:insert name="addHeadTag" />
+        </head>
+        <body>
+            <div id="vf-page">
+                <!-- Header -->
+                <apex:insert name="header">
+                    <c:ScrollerHeader />
+                </apex:insert>
+                <!-- Body -->
+                <apex:insert name="body"/>
+                <!-- Footer -->
+                <apex:insert name="footer">
+                    <c:ScrollerFooter />
+                </apex:insert>
+            </div>
+        </body>
+    </html>
+</apex:page>

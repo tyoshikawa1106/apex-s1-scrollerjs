@@ -1,0 +1,30 @@
+<apex:page >
+    <style type="text/css">
+        .myHeader {
+            background-color: #009688;
+            line-height: 44px;
+            text-align: center;
+            color: #FFF;
+            height: 44px;
+            font-weight: bold;
+        }
+
+        .footer {
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            background-color: #37474F;
+        }
+
+        #vf-page header a {
+            text-decoration: none !important;
+            color: white !important;
+        }
+
+        #scroller ul li {
+            margin: 20px;
+            font-size: 16px;
+        }
+    </style>
+</apex:page>

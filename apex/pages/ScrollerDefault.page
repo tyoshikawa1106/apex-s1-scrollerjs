@@ -1,0 +1,127 @@
+<apex:page controller="ScrollerDemoController" showHeader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" id="pg">
+    <apex:composition template="ScrollerTemplate">
+        <!-- title -->
+        <apex:define name="title">
+            <apex:outputText value="ScrollerJS - Default" />
+        </apex:define>
+        <!-- add head tag -->
+        <apex:define name="addHeadTag">
+            <style>
+                #wrapper {
+                    position: absolute;
+                    z-index: 1;
+                    top: 45px;
+                    bottom: 40px;
+                    left: 0;
+                    width: 100%;
+                    padding-top: 14px;
+                    background: #F0F1F2;
+                    overflow: hidden;
+                }
+            </style>
+        </apex:define>
+        <!-- body -->
+        <apex:define name="body">
+            <div id="wrapper">
+                <div id="scroller" style="background-color: #f0f1f2">
+                    <apex:repeat value="{!lists}" var="item">
+                        <article class="mam bg-1 brm border border--3">
+                            <div class="flag pam">
+                                <div class="flag--image prm">
+                                    <img src="{!URLFOR($Resource.ScrollerJs, 'src/assets/cat.jpg')}" alt="kitten" class="brm" />
+                                </div>
+                                <div class="flag--body">
+                                    <a href="javascript:void(0)" name="actor" title="ScrollerJS cat" class="fw-semibold f3 db">
+                                        ScrollerJS cat
+                                    </a>
+                                    <time class="db f6 text-color-2">
+                                        3 minutes ago
+                                    </time>
+                                </div>
+                            </div>
+                            <p class="phm mtn fw-normal f4 text-color-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non massa ornare, pulvinar eros at, elementum lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse pulvinar metus vel turpis luctus sollicitudin.
+                            </p>
+                            <div>
+                            </div>
+                            <footer class="clear phm ptm mbm border-top border--3">
+                                <a href="javascript:void(0)" class="f5 fl">
+                                    <span class="dib mrs icon-utility-like f4"></span>
+                                    Liked
+                                </a>
+                                <span class="f5 fr mlm">
+                                    1 like
+                                </span>
+                                <span class="f5 fr">
+                                    2 comments
+                                </span>
+                            </footer>
+                        </article>
+
+                        <article class="mam bg-1 brm border border--3">
+                            <div class="flag pam">
+                                <div class="flag--image prm">
+                                    <img src="{!URLFOR($Resource.ScrollerJs, 'src/assets/cat.jpg')}" alt="kitten" class="brm" />
+                                </div>
+                                <div class="flag--body">
+                                    <a href="javascript:void(0)" name="actor" title="ScrollerJS cat" class="fw-semibold f3 db">
+                                    ScrollerJS cat
+                                    </a>
+                                    <time class="db f6 text-color-2" datetime="2013-11-13">
+                                    13 minutes ago
+                                    </time>
+                                </div>
+                            </div>
+                            <p class="phm mtn fw-normal f4 text-color-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non massa ornare, pulvinar eros at, elementum lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse pulvinar metus vel turpis luctus sollicitudin.
+                            </p>
+                            <div>
+                                <article class="brm border border--4 bg-3 pam mhm mbm">
+                                    <div class="flag">
+                                        <div class="flag--image prm">
+                                            <img src="{!URLFOR($Resource.ScrollerJs, 'src/assets/excel_120.png')}" class="ht-30" alt="excel" />
+                                        </div>
+                                        <div class="flag--body">
+                                            <span class="f4 text-color-1 db">
+                                            photo.pdf
+                                            </span>
+                                            <span class="db f5 text-color-2">
+                                            1.2 MB
+                                            </span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <footer class="clear phm ptm mbm border-top border--3">
+                                <a href="javascript:void(0)" name="like" title="Liked" class="f5 fl">
+                                <span class="dib mrs icon-utility-like f4">
+                                </span>
+                                Liked
+                                </a>
+                                <span class="f5 fr mlm">
+                                2 likes
+                                </span>
+                                <span class="f5 fr">
+                                5 comments
+                                </span>
+                            </footer>
+                        </article>
+                    </apex:repeat>
+                </div>
+            </div>
+            <!-- ============================ SCROLLER INITIALIZATION =========================== -->
+            <script>
+                // Prevents viewport bouncing iOS
+                document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
+
+                var scrollerConfig = {
+                    '//Description' : 'Default scroller with no configuration'
+                };
+
+                window.addEventListener('load', function () {
+                    window.scroller = new Scroller('#wrapper', scrollerConfig);
+                });
+            </script>
+        </apex:define>
+    </apex:composition>
+</apex:page>
